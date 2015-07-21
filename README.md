@@ -8,9 +8,11 @@ boxenprofiler
 [![Build Status](https://img.shields.io/travis/akerl/boxenprofiler.svg)](https://travis-ci.org/akerl/boxenprofiler)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
-SHORT_DESCRIPTION
+Profiler for boxen runs, based heavily on [puppet-profiler](https://github.com/rodjek/puppet-profiler)
 
 ## Usage
+
+Instead of running `boxen`, run `boxenprofiler`. Bam!
 
 ## Installation
 
