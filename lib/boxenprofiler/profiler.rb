@@ -1,12 +1,10 @@
 ##
 # Profile runtime definitions
 module BoxenProfiler
-  # rubocop:disable Metrics/LineLength
   REGEX_PATTERNS = [
-    /^Info: .*(?<class>[^\[]+)\[(?<name>[^\]].+)\]: Evaluated in (?<time>[\d\.]+) seconds$/,
-    /^Notice: Compiled (?<class>catalog) .* environment (?<name>[^ ]+) in (?<time>[\d\.]+) seconds$/
+    /^Info: .*([^\[]+)\[([^\]].+)\]: Evaluated in ([\d\.]+) seconds$/,
+    /^Notice: Compiled (catalog) .* environment ([^ ]+) in ([\d\.]+) seconds$/
   ]
-  # rubocop:enable Metrics/LineLength
 
   DEFAULT_RESULT_COUNT = 100
 
@@ -37,7 +35,7 @@ module BoxenProfiler
     end
 
     def command
-      'boxen --profile'
+      'boxen --profile --no-color'
     end
   end
 end
