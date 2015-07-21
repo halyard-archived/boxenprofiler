@@ -14,7 +14,7 @@ module BoxenProfiler
   # Profiler runtime class
   class Profiler
     def run!
-      results = parse(`#{cmd}`.split("\n"))
+      results = parse(`#{command}`.split("\n"))
       results.sort! { |a, b| b.last <=> a.last }
       write results
     end
