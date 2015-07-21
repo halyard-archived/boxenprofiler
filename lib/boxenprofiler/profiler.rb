@@ -2,7 +2,7 @@
 # Profile runtime definitions
 module BoxenProfiler
   REGEX_PATTERNS = [
-    /^Info: .*([^\[]+)\[([^\]].+)\]: Evaluated in ([\d\.]+) seconds$/,
+    /^Info: .*([A-Z][^\[]+)\[(.+?)\]: Evaluated in ([\d\.]+) seconds$/,
     /^Notice: Compiled (catalog) .* environment ([^ ]+) in ([\d\.]+) seconds$/
   ]
 
@@ -21,7 +21,7 @@ module BoxenProfiler
 
     def write(results)
       results.lazy.take(DEFAULT_RESULT_COUNT).each do |pclass, name, time|
-        puts "#{time} - #{pclass}[#{name}]"
+        puts format('%6.2f - %s[%s]', time, pclass, name)
       end
     end
 
@@ -30,6 +30,7 @@ module BoxenProfiler
         next unless REGEX_PATTERNS.find { |pattern| line.match(pattern) }
         pclass, name, time = Regexp.last_match[1..3]
         time = time.to_f
+        next if time.zero?
         acc << [pclass, name, time]
       end
     end
