@@ -4,7 +4,7 @@ module BoxenProfiler
   REGEX_PATTERNS = [
     /^Info: .*([A-Z][^\[]+)\[(.+?)\]: Evaluated in ([\d\.]+) seconds$/,
     /^Notice: Compiled (catalog) .* environment ([^ ]+) in ([\d\.]+) seconds$/
-  ]
+  ].freeze
 
   DEFAULT_RESULT_COUNT = 100
 
