@@ -1,3 +1,5 @@
+**Inactive Project:** This project is being retired since I'm shifting to use vanilla puppet instead of boxen
+
 boxenprofiler
 =========
 
